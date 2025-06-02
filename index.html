@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UNO - Unión Nacional Organizada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #e6f0ff, #ffffff);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: hwb(130 24% 3%);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeInDown 1s ease-out;
+      background-image: url('1.jpg'); /* ← Aquí pon el nombre de tu imagen */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-blend-mode: darken;
+      /* combinamos el color oscuro con la imagen */
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    }
+
+    nav {
+      background-color: hwb(130 24% 3%);
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      min-height: 100vh;
+      animation: fadeInUp 1s ease;
+    }
+
+    .cuadrante {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    footer {
+      background-color: hwb(130 24% 3%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .boton {
+      background: #ff9900;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .boton:hover {
+      background: #e68a00;
+    }
+
+    .logos-superiores {
+  display: flex;
+  justify-content: center;
+  gap: 140px;
+  /* margin removido de aquí para manejarlo inline o desde la sección */
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.logos-superiores .logo {
+  max-height: 200px; /* más grande */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logos-superiores .logo:hover {
+  transform: scale(2.1);
+}
+    
+
+    .imagenes-intermedias {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 0 60px 0;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+   .imagenes-intermedias img {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease-out forwards;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+
+    .imagenes-intermedias img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .img-izquierda { animation-delay: 0.2s; }
+    .img-derecha { animation-delay: 0.5s; }
+
+    @media (max-width: 768px) {
+      .imagenes-intermedias {
+        flex-direction: column;
+      }
+
+      .imagenes-intermedias img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header style="
+  background-color: lch(87.9% 3.4 149.32);
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: hwb(130 24% 3%);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+">
+
+  <h1 style="
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  ">UNO</h1>
+
+  <p style="
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 2px;
+  ">UNIÓN NACIONAL ORGANIZADA</p>
+  
+</header>
+
+
+  <nav>
+    <a href="#vision">Visión</a>
+    <a href="#propuestas">Propuestas</a>
+    <a href="#equipo">Nuestro Equipo</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="vision">
+    <h2>Visión y Valores</h2>
+    <div class="cuadrante">
+      <div class="card" style="background-color: rgb(162, 223, 230); border-left: 6px solid hwb(130 24% 3%);">
+        <h3>Nuestro Partido</h3>
+        <p>Queremos un país donde todos podamos vivir bien, sin que nadie se quede atrás.
+Donde haya trabajo, educación pública y de calidad, salud para todos y un planeta cuidado.
+Creemos que si nos organizamos y remamos todos juntos, podemos cambiarlo todo.
+UNO no es solo un partido, es una forma diferente de hacer las cosas. Con ganas, con gente joven y con ideas nuevas. Queremos una España donde la política no sea solo promesas, sino cosas que realmente pasen.
+</p>
+      </div>
+      <div class="card" style="background-color: rgb(162, 223, 230); border-left: 6px solid hwb(130 24% 3%);">
+        <h3>Progreso</h3>
+        <p>– Queremos que se hagan cosas que se vean y que sirvan para vivir mejor. No promesas, hechos. Escuelas arregladas, hospitales que funcionen, calles seguras y trabajos reales.</p>
+        <p>– Que no sea un lujo tener internet rápido o una compu. Queremos que en cada escuela haya tecnología copada, clases con cosas modernas y que nadie quede afuera por no tener wifi.</p>
+        <p>– Podemos progresar sin romper todo. Queremos que se apoyen empresas que cuiden el ambiente, que usen energías limpias, y que den laburo sin contaminar.</p>
+        <p>–Apoyar a los que investigan, inventan y crean cosas nuevas. La ciencia tiene que estar en todos lados, desde los laboratorios hasta los barrios. Porque el futuro no se espera, se construye.</p>
+      
+      </div>
+      <div class="card" style="background-color: rgb(162, 223, 230); border-left: 6px solid hwb(130 24% 3%);">
+        <h3>Unidad</h3>
+        <p>
+1. Unión
+Porque si estamos peleando entre nosotros, no vamos a llegar a ningún lado. Es mejor escuchar, respetar y hacer cosas juntos.</p>
+</p>2. Igualdad
+Todos tienen que tener las mismas chances, no importa de dónde vengas, si sos rico o pobre, si vivís en el campo o en la ciudad.</p>
+</p>3. Educación posta
+Queremos que estudiar sea gratis, bueno y que sirva para la vida. No solo memorizar, también pensar, opinar y hacer.<p>
+</p>4. Planeta
+Cuidar el medio ambiente no es moda, es urgente. No queremos un futuro lleno de humo, plástico y enfermedades. Queremos aire limpio, ríos sin basura y más árboles.</p>
+</p>5. Transparencia
+Ya estamos cansados de que nos mientan o roben desde arriba. Queremos que los políticos digan la verdad, rindan cuentas y se bajen del sillón si no hacen nada.</p>
+</p>6. Escuchar a los jóvenes
+Tenemos ideas, tenemos fuerza y tenemos ganas. No somos el futuro, somos el presente. Y queremos participar en serio, no solo cuando hay elecciones.</p>
+</p>
+      </div>
+      <div class="card" style="background-color: rgb(162, 223, 230); border-left: 6px solid hwb(130 24% 3%);">
+        <h3>Sacar presupuesto</h3>
+         <p>
+  </p>1.Apoyar a los que quieren emprender o trabajar por su cuenta, con ayudas y menos impuestos para empezar. </p>
+
+ </p>2.Cuidar el medio ambiente también trae dinero: energías renovables, reciclaje y turismo sostenible. </p>
+
+ </p>3.Internet para todos, para que se pueda trabajar desde casa y traer ingresos desde cualquier parte. </p>
+
+ </p>4.Exportar productos con valor, no solo materias primas. Ropa, tecnología, comida hecha aquí… </p>
+
+ </p>5.Cobrar impuestos de forma justa: que paguen más los que más tienen y que no haya trampas. </p>
+
+ </p>6.Invertir en educación y ciencia, para que España tenga gente preparada que cree y avance. </p>
+
+ </p>7.Reducir gastos innecesarios, como privilegios políticos y contratos poco claros. </p>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="logos-superiores">
+    <img src="1.jpg" alt="Logo 1" class="logo" />
+    <img src="1.jpg" alt="Logo 2" class="logo" />
+  </div>
+
+  <div class="imagenes-intermedias">
+    <img src="hola.png" alt="Coche eléctrico moderno" class="img-izquierda" />
+    <img src="educacion.png" alt="Transporte ecológico urbano" class="img-derecha" />
+  </div>
+
+  <section id="propuestas">
+    <h2>Nuestras Propuestas</h2>
+    <div class="cuadrante">
+      <div class="card" style="background-color: rgb(162, 223, 230); border-left: 6px solid hwb(130 24% 3%);">
+        <h3>Educación</h3>
+        <p>– Que la educación sea gratis para todos, desde el jardín hasta la universidad.</p>
+        <p>– Cambiar cómo se enseña: más pensamiento crítico, clases digitales y que escuchen a los estudiantes.</p>
+        <p>– Poner más plata en ciencia y tecnología porque es el futuro.</p>
+      </div>
+      <div class="card" style="background-color: rgb(162, 223, 230); border-left: 6px solid hwb(130 24% 3%);">
+        <h3>Economia</h3>
+        <p>– Apoyar a los jóvenes que quieren crear sus propios negocios o hacer cosas creativas.</p>
+        <p>– Dar una renta básica a estudiantes y jóvenes sin trabajo para que puedan seguir estudiando o buscando laburo.</p>
+        <p>– Ayudar a los que quieren armar cooperativas o empresas que cuiden el planeta.</p>
+      </div>
+      <div class="card" style="background-color: rgb(162, 223, 230);  border-left: 6px solid hwb(130 24% 3%);">
+        <h3>Medio Ambiente</h3>
+        <p>– Declarar que estamos en emergencia climática y actuar ya.</p>
+        <p>– Pasar a usar energías limpias antes del 2035.</p>
+        <p>– Crear el plan “UNO Verde” para que los jóvenes tengan trabajo cuidando el medio ambiente.</p>
+      </div>
+      <div class="card" style="background-color: rgb(162, 223, 230); border-left: 6px solid hwb(130 24% 3%);">
+        <h3>Tecnología y derechos digitales</h3>
+        <p>– Que el internet sea un derecho para todos: libre, rápido y sin censura.</p>
+        <p>– Hacer que el gobierno sea digital y transparente, para que todos veamos qué hacen.</p>
+        <p>– Proteger nuestros datos y usar tecnología propia.</p>
+      </div>
+      <div class="card" style="background-color: rgb(162, 223, 230); border-left: 6px solid hwb(130 24% 3%);">
+        <h3>Democracia y participación</h3>
+        <p>– Dejar que los jóvenes decidan en qué se gasta la plata del barrio o la ciudad.</p>
+        <p>– Que podamos sacar a los políticos que no hacen bien su trabajo.</p>
+        <p>– Votar desde los 16, pero aprendiendo bien cómo funciona la democracia.</p>
+      </div>
+
+  </section>
+
+  <section id="video-institucional" style="text-align: center; margin: 50px 0;">
+ 
+  <img 
+    src="ji.jpg" 
+    alt="Imagen horizontal grande" 
+    style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"
+  />
+</section>
+
+  <section id="equipo">
+    <h2>Conoce Nuestro Equipo</h2>
+    <div class="cuadrante">
+      <div class="card">Daniela Dominguez - Director de Campaña</div>
+      <div class="card">Naira García - Candidato</div>
+      <div class="card">Juan José Leiva - Jefe de Comunicaciones</div>
+      <div class="card">Juan López - Publicistas</div>
+    </div>
+  </section>
+ <footer>
+    <p>&copy; 2025 UNO. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
